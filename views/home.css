@@ -1,0 +1,15 @@
+h1{
+  color: blue;
+}
+
+input:invalid {
+  border: 2px solid #e11d48; /* red-600 */
+}
+
+.error {
+  color: #e11d48;
+}
+p.homeAdded {
+  color: #e11d48;
+
+}

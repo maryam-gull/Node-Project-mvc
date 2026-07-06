@@ -1,0 +1,46 @@
+<%- include('partials/head.ejs') %>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="welcome">Welcome to Airbnb</h1>
+    </header>
+
+    <main class="home-content">
+      <p class="total">Total homes: <%= registeredHomes.length %></p>
+
+      <% if (registeredHomes.length > 0) { %>
+
+        <div class="card-grid">
+          <% registeredHomes.forEach((home, i) => { %>
+
+            <div class="home-card">
+          <!-- <p>Image path test: <%= home.image %></p> -->
+
+              <div class="card-badge">#<%= i + 1 %></div>
+      <!-- <img src="<%= home.image %>" class="card-img"> -->
+
+              <h3 class="card-title"><%= home.housename %></h3>
+  <p class="card-location">📍 <%= home.location %></p>
+
+              <p class="card-price">
+                Rs<%= home.price ? home.price : "N/A" %>
+                <span>/ night</span>
+              </p>
+
+              <a href="#" class="card-btn">View Details</a>
+            </div>
+
+          <% }) %>
+        </div>
+
+      <% } else { %>
+
+        <p class="empty">No homes registered yet.</p>
+
+      <% } %>
+
+      <a href="/host/add-home" class="add-btn">Add Home</a>
+
+    </main>
+  </div>
+</body>
